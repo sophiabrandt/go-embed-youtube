@@ -26,11 +26,21 @@ The project is a command line program that uses the YouTube API and returns mark
 
 You can use this tool in conjunction with other utilities, like [xclip](https://linux.die.net/man/1/xclip) or [pbpaste](https://osxdaily.com/2007/03/05/manipulating-the-clipboard-from-the-command-line/).
 
-## Code Example
+## Example Usage
 
 ```sh
 go-embed-youtube -y 'https://youtube.com/watch?v=ScMzIvxBSi4' -k <google developer API key>
 ```
+
+Output:
+
+```sh
+[![Placeholder Video](https://i.ytimg.com/vi/ScMzIvxBSi4/sddefault.jpg)](https://youtube.com/watch?v=ScMzIvxBSi4 "Placeholder Video")
+```
+
+Rendered Markdown:
+
+[![Placeholder Video](https://i.ytimg.com/vi/ScMzIvxBSi4/sddefault.jpg)](https://youtube.com/watch?v=ScMzIvxBSi4 "Placeholder Video")
 
 ## Installation
 
@@ -54,7 +64,7 @@ go-embed-youtube -y 'https://youtube.com/watch?v=ScMzIvxBSi4' -k <google develop
 ```bash
 go-embed-youtube -h
 
-> Usage of embed-youtube:
+Usage of embed-youtube:
   -k string
         Google Developers API Key (required)
   -t duration
