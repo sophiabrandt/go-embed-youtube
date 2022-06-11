@@ -78,10 +78,15 @@ func (cli *cliEnv) fetchJSON(url string, data interface{}) error {
 }
 
 func markdownPrint(ar APIResponse) error {
+	// prefer standard thumbnail image, use default as fallback
+	var thumbnail = ar.Items[0].Snippet.Thumbnails.Standard.URL
+	if (thumbnail) == "" {
+		thumbnail = ar.Items[0].Snippet.Thumbnails.Default.URL
+	}
 	_, err := fmt.Printf(
 		`[![%s](%s)](https://youtube.com/watch?v=%s "%s")`,
 		ar.Items[0].Snippet.Title,
-		ar.Items[0].Snippet.Thumbnails.Standard.URL,
+		thumbnail,
 		ar.Items[0].ID,
 		ar.Items[0].Snippet.Title,
 	)
